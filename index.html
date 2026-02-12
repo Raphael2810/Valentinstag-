@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Eine wichtige Frage</title>
+<style>
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #ffe6f0;
+  padding-top: 100px;
+}
+button {
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+#nein {
+  position: absolute;
+}
+</style>
+</head>
+<body>
+
+<h2>Ich habe eine wichtige Frage an dich...</h2>
+<button onclick="zeigeFrage()">Hier klicken</button>
+
+<script>
+function zeigeFrage() {
+  document.body.innerHTML = `
+  <h1>Willst du mein Valentin sein? 💖</h1>
+  <button onclick="ja()">Ja ❤️</button>
+  <button id="nein" onmouseover="weglaufen()">Nein</button>
+  `;
+}
+
+function ja() {
+  document.body.innerHTML = "<h1>Du hast mich gerade sehr glücklich gemacht 💕</h1>";
+}
+
+function weglaufen() {
+  const btn = document.getElementById("nein");
+  btn.style.top = Math.random() * window.innerHeight + "px";
+  btn.style.left = Math.random() * window.innerWidth + "px";
+}
+</script>
+
+</body>
+</html>
